@@ -1,10 +1,19 @@
 ---
 layout:     post
-title:      "PHP_EOL constant and its usage"
-subtitle:   "What it is and how to use it in an effective way."
+title:      "PHP_EOL and cross platform file compatibility"
+subtitle:   "How the language helps in solving an age old issue."
 date:       2017-02-06 10:42:00
 author:     "Devi Prasad"
 header-img: "img/phpfinal.jpg"
 ---
 
-<p>How to code that is the question.</p>
+Whenever we hit enter key on our keyboard while writing a document, we are actually inserting an invisible sequence of characters that recognises the **end of line**. It helps the software that we are using, to go to next line and allow us to start adding data to the file we are working on.
+
+There are various names used to refer to this character/sequence of characters namely **line endings**, **newline**, **line break**. Basically, there are two operations performed here - **Line Feed**, which creates and new line in the file and **Carriage Return**, which resets the cursors position to the beginning of a line of text.
+
+But there is a small catch. Historically, different operating systems have handled line endings differently. Thus it creates a problem when text files generated in one operating systems are opened for operations in another. Thus exchanging of files may cause wrong representations of the data stored in the files.
+
+In case of PHP, this issue is solved using a predefined constant - PHP_EOL. According to [php.net](php.net), the definition of PHP_EOL is as following:
+> The correct 'end of line' symbol for this platform.
+
+So what exactly it tells us is that when we use PHP_EOL, it checks the operating system in which it is and generates corresponding line endings, so that systems won't find it difficult to parse the generated file and users need not to scratch their heads to understand a piece of data that was created in some other operating systems.
