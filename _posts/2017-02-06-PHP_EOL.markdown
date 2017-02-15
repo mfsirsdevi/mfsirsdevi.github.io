@@ -14,6 +14,7 @@ There are various names used to refer to this character/sequence of characters n
 But there is a small catch. Historically, different operating systems have handled line endings differently. Thus it creates a problem when text files generated in one operating systems are opened for operations in another. Thus exchanging of files may cause wrong representations of the data stored in the files.
 
 In case of PHP, this issue is solved using a predefined constant - PHP_EOL. According to [php.net](php.net), the definition of PHP_EOL is as following:
+
 > The correct 'end of line' symbol for this platform.
 
 So what exactly it tells us is that when we use PHP_EOL, it checks the operating system in which it is and generates corresponding line endings, so that systems won't find it difficult to parse the generated file and users need not to scratch their heads to understand a piece of data that was created in some other operating systems.
